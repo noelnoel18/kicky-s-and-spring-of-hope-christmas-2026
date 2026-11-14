@@ -172,6 +172,11 @@ button:disabled{opacity:.5}
 .rsvp-confirm.no-box{border-color:var(--red);background:rgba(143,29,44,.07)}
 .rsvp-confirm strong{display:block;font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.2}
 .rsvp-confirm small{display:block;margin-top:4px;color:var(--mut);font-size:13px}
+.undo-btn{
+  margin-top:12px;padding:6px 16px;font-size:13px;font-weight:600;
+  border:1px solid var(--line);background:var(--card);color:var(--mut);
+}
+.undo-btn:hover{border-color:var(--red);color:var(--red)}
 @keyframes popIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 
 .msg{margin-top:12px;text-align:center;color:var(--green);font-weight:600;min-height:20px}
@@ -186,8 +191,13 @@ button:disabled{opacity:.5}
 .sw{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
 .sw div{text-align:center;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
 .sw span{display:block;aspect-ratio:1;border-radius:50%;border:3px solid var(--card);outline:2px solid var(--gold);margin:0 auto 8px;max-width:96px;box-shadow:0 6px 14px rgba(0,0,0,.18)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;max-height:260px;overflow:auto}
-.chip{background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:4px 12px 4px 4px;display:flex;align-items:center;gap:8px;font-size:14px}
+
+/* Who's Coming Section (Going & Not Going) */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.two{grid-template-columns:1fr}}
+.cnt{font:700 44px "Cormorant Garamond",serif;color:var(--green);text-align:center;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center;max-height:260px;overflow:auto}
+.chip{background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:5px 14px 5px 5px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
 .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600;font-size:13px;flex:none}
 
 .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:620px;margin:0 auto}
@@ -292,7 +302,7 @@ function resetEnvelope() {
   <section id="rsvp">
     <p class="orn">✦</p>
     <h2>Will you join us?</h2>
-    <p class="sub">Select your name from the list below and tap your response. You can change your answer anytime.</p>
+    <p class="sub">Select your name from the list below and tap your response. You can change or undo your answer anytime.</p>
     <div class="card">
       <select id="rsel" aria-label="Choose your name">
         <option value="">▾ Select your name from the guest list</option>
@@ -333,30 +343,50 @@ function resetEnvelope() {
     </div>
   </section>
 
-  <section class="band" id="wallS">
+  <section class="band" id="who">
     <div>
       <p class="orn">✦</p>
-      <h2>The Party Wall</h2>
-      <p class="sub">Share your excitement, ask questions and post photos before the big night.</p>
-      <div class="card" id="comp">
-        <textarea id="ptext" placeholder="What’s on your mind?" maxlength="1000"></textarea>
-        <div class="row" style="margin-top:10px;align-items:center">
-          <span id="pimgInfo" style="color:var(--mut);font-size:14px"></span>
-          <button type="button" id="pimgB" class="s" style="flex:0 0 auto">📷 Add photo</button>
-          <input type="file" id="pimg" accept="image/*" hidden>
-          <button type="button" class="p" id="ppost" style="flex:0 0 auto">Post</button>
+      <h2>Who’s Coming?</h2>
+      <p class="sub">See who has confirmed so far for our 2026 Christmas celebration.</p>
+      <div class="two">
+        <div class="card">
+          <div class="cnt" id="gc">0</div>
+          <h3 style="text-align:center;color:var(--green)">Going</h3>
+          <div class="chips" id="going"></div>
         </div>
-        <div class="msg err" id="pmsg"></div>
+        <div class="card">
+          <div class="cnt" id="nc" style="color:var(--red)">0</div>
+          <h3 style="text-align:center;color:var(--red)">Not Going</h3>
+          <div class="chips" id="notgoing"></div>
+        </div>
       </div>
-      <div id="feed"></div>
     </div>
   </section>
 
-  <section id="memories">
+  <section id="wallS">
     <p class="orn">✦</p>
-    <h2>Throwback Memories</h2>
-    <p class="sub">Here’s to making even more wonderful memories and having twice the fun together at this year’s Christmas celebration!</p>
-    <div class="gal-grid" id="gal"></div>
+    <h2>The Party Wall</h2>
+    <p class="sub">Share your excitement, ask questions and post photos before the big night.</p>
+    <div class="card" id="comp">
+      <textarea id="ptext" placeholder="What’s on your mind?" maxlength="1000"></textarea>
+      <div class="row" style="margin-top:10px;align-items:center">
+        <span id="pimgInfo" style="color:var(--mut);font-size:14px"></span>
+        <button type="button" id="pimgB" class="s" style="flex:0 0 auto">📷 Add photo</button>
+        <input type="file" id="pimg" accept="image/*" hidden>
+        <button type="button" class="p" id="ppost" style="flex:0 0 auto">Post</button>
+      </div>
+      <div class="msg err" id="pmsg"></div>
+    </div>
+    <div id="feed"></div>
+  </section>
+
+  <section class="band" id="memories">
+    <div>
+      <p class="orn">✦</p>
+      <h2>Throwback Memories</h2>
+      <p class="sub">Here’s to making even more wonderful memories and having twice the fun together at this year’s Christmas celebration!</p>
+      <div class="gal-grid" id="gal"></div>
+    </div>
   </section>
 
   <section id="adminS" hidden>
@@ -461,8 +491,8 @@ const D = {
   gallery: [...DEFAULT_PHOTOS]
 };
 
-const STORE_KEY = "kickys_xmas_2026_v14";
-const UID_KEY = "kickys_xmas_uid_v14";
+const STORE_KEY = "kickys_xmas_2026_v16";
+const UID_KEY = "kickys_xmas_uid_v16";
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guest";
 
 function loadStore() {
@@ -477,6 +507,7 @@ function loadStore() {
       ev: { ...D, ...(raw.ev || {}), gallery: mergedGal },
       inv: savedInv,
       rsvps: Array.isArray(raw.rsvps) ? raw.rsvps : [],
+      cloudRsvps: Array.isArray(raw.cloudRsvps) ? raw.cloudRsvps : [],
       posts: Array.isArray(raw.posts) ? raw.posts : [],
       cms: Array.isArray(raw.cms) ? raw.cms : []
     };
@@ -485,6 +516,7 @@ function loadStore() {
       ev: { ...D, gallery: [...DEFAULT_PHOTOS] },
       inv: DEFAULT_GUESTS.map(n => ({ id: slug(n), name: n })),
       rsvps: [],
+      cloudRsvps: [],
       posts: [],
       cms: []
     };
@@ -516,15 +548,31 @@ const av = n => `<span class="av" style="background:${col(n)}">${esc((n || "?").
 const names = () => Object.fromEntries(S.rsvps.map(r => [r.id, r.name]));
 const myR = () => S.rsvps.find(r => r.id === uid);
 
+async function fetchLiveAttendance() {
+  if (!GOOGLE_SHEET_URL || !GOOGLE_SHEET_URL.includes("/exec")) return;
+  try {
+    const res = await fetch(GOOGLE_SHEET_URL + "?t=" + Date.now());
+    const data = await res.json();
+    if (Array.isArray(data.rsvps)) {
+      S.cloudRsvps = data.rsvps;
+      saveStore();
+      rRsvp();
+    }
+  } catch (err) {
+    console.warn("Could not fetch live attendance:", err);
+  }
+}
+
 async function syncRsvpToCloud(entry) {
-  syncState = "Sending your RSVP…";
+  const statusUpper = entry.status.toUpperCase();
+  syncState = statusUpper === "UNDO" ? "Removing your RSVP…" : "Sending your RSVP…";
   rRsvp();
 
   try {
     const formData = new URLSearchParams();
     formData.append("form-name", "rsvp");
     formData.append("name", entry.name);
-    formData.append("status", entry.status === "yes" ? "YES" : "NO");
+    formData.append("status", statusUpper);
     formData.append("guestId", entry.id);
 
     await fetch("/", {
@@ -538,22 +586,18 @@ async function syncRsvpToCloud(entry) {
 
   if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.includes("/exec")) {
     try {
-      await fetch(GOOGLE_SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({
-          name: entry.name,
-          status: entry.status === "yes" ? "YES" : "NO",
-          guestId: entry.id
-        })
+      const qs = `?name=${encodeURIComponent(entry.name)}&status=${encodeURIComponent(statusUpper)}&t=${Date.now()}`;
+      await fetch(GOOGLE_SHEET_URL + qs, {
+        method: "GET",
+        mode: "no-cors"
       });
-      syncState = "✓ Confirmed & sent to organizer’s list";
+      syncState = statusUpper === "UNDO" ? "" : "✓ Confirmed & updated on the list";
+      setTimeout(fetchLiveAttendance, 1200);
     } catch (err) {
-      syncState = "✓ Saved on your device";
+      syncState = statusUpper === "UNDO" ? "" : "✓ Saved on your device";
     }
   } else {
-    syncState = "✓ Saved on your device";
+    syncState = statusUpper === "UNDO" ? "" : "✓ Saved on your device";
   }
   rRsvp();
 }
@@ -654,12 +698,17 @@ function rRsvp() {
     box.innerHTML = isYes
       ? `<div class="rsvp-confirm yes-box">
            <strong style="color:var(--green)">🎄 RSVP Confirmed: ${esc(r.name)} is GOING!</strong>
-           <small>${esc(syncState || "✓ Your attendance is recorded. Tap the other button anytime if plans change.")}</small>
+           <small>${esc(syncState || "✓ Your attendance is recorded.")}</small>
+           <button type="button" class="undo-btn" id="undoRsvpBtn">↩ Undo / Clear my RSVP</button>
          </div>`
       : `<div class="rsvp-confirm no-box">
            <strong style="color:var(--red)">RSVP Recorded: ${esc(r.name)} can’t make it</strong>
-           <small>${esc(syncState || "✓ We’ll miss you! Tap YES anytime if you’re able to join.")}</small>
+           <small>${esc(syncState || "✓ We’ll miss you!")}</small>
+           <button type="button" class="undo-btn" id="undoRsvpBtn">↩ Undo / Clear my RSVP</button>
          </div>`;
+
+    const undoBtn = $("#undoRsvpBtn");
+    if (undoBtn) undoBtn.onclick = undoRsvp;
   } else {
     yesBtn.textContent = "YES – I’m going!";
     noBtn.textContent = "NO – I can’t make it";
@@ -667,6 +716,34 @@ function rRsvp() {
     noBtn.classList.remove("sel", "dim");
     box.innerHTML = "";
   }
+
+  // Merge cloud RSVPs + local device RSVPs for Who's Coming? (Going & Not Going)
+  const mergedMap = new Map();
+  (S.cloudRsvps || []).forEach(item => {
+    if (item && item.name) {
+      mergedMap.set(item.name.trim().toLowerCase(), { name: item.name.trim(), status: item.status });
+    }
+  });
+  S.rsvps.forEach(item => {
+    if (item && item.name) {
+      mergedMap.set(item.name.trim().toLowerCase(), { name: item.name.trim(), status: item.status });
+    }
+  });
+
+  const allReplies = Array.from(mergedMap.values());
+  const goingList = allReplies.filter(x => x.status === "yes").sort((a, b) => a.name.localeCompare(b.name));
+  const notGoingList = allReplies.filter(x => x.status === "no").sort((a, b) => a.name.localeCompare(b.name));
+
+  $("#gc").textContent = goingList.length;
+  $("#nc").textContent = notGoingList.length;
+
+  $("#going").innerHTML = goingList.map(g =>
+    `<span class="chip">${av(g.name)}${esc(g.name)}</span>`
+  ).join("") || '<span class="sub" style="margin:8px 0">No one yet. Be the first!</span>';
+
+  $("#notgoing").innerHTML = notGoingList.map(g =>
+    `<span class="chip">${av(g.name)}${esc(g.name)}</span>`
+  ).join("") || '<span class="sub" style="margin:8px 0">No one has declined.</span>';
 
   if (admin) {
     $("#arsvp").innerHTML = S.rsvps.map(x =>
@@ -756,6 +833,19 @@ async function rsvp(status) {
   saveStore();
   all();
   await syncRsvpToCloud(entry);
+}
+
+async function undoRsvp() {
+  const existing = myR();
+  if (!existing) return;
+  S.rsvps = S.rsvps.filter(r => r.id !== uid);
+  S.cloudRsvps = (S.cloudRsvps || []).filter(r => r.name.trim().toLowerCase() !== existing.name.trim().toLowerCase());
+  $("#rsel").value = "";
+  $("#rmsg").textContent = "";
+  syncState = "";
+  saveStore();
+  all();
+  await syncRsvpToCloud({ id: uid, name: existing.name, status: "undo" });
 }
 
 $("#yes").onclick = () => rsvp("yes");
@@ -903,6 +993,8 @@ $("#arsvp").onclick = e => {
 };
 
 all();
+fetchLiveAttendance();
+
 if (!matchMedia("(prefers-reduced-motion:reduce)").matches) {
   document.documentElement.classList.add("js");
   const hh = document.querySelector(".hero");
@@ -916,7 +1008,7 @@ if (!matchMedia("(prefers-reduced-motion:reduce)").matches) {
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   }), { threshold: .12 });
-  document.querySelectorAll(".hero .kick,.hero h1,section>.orn,section>h2,section>.sub,.band>div>.orn,.band>div>h2,.band>div>.sub,#rsvp .card,.sw div,#comp,#evgrid,#mapVisual").forEach(el => {
+  document.querySelectorAll(".hero .kick,.hero h1,section>.orn,section>h2,section>.sub,.band>div>.orn,.band>div>h2,.band>div>.sub,#rsvp .card,.sw div,.two>.card,#comp,#evgrid,#mapVisual").forEach(el => {
     el.classList.add("rv");
     if (el.matches(".sw div")) el.style.transitionDelay = [...el.parentNode.children].indexOf(el) * .12 + "s";
     io.observe(el);
