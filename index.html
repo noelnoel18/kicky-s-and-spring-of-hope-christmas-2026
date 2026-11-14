@@ -25,9 +25,7 @@ section{padding:56px 18px;max-width:880px;margin:0 auto}
 #snow i{position:absolute;top:-10px;width:5px;height:5px;border-radius:50%;background:#fff;opacity:.7;animation:fall linear infinite;box-shadow:0 0 3px rgba(0,0,0,.12)}
 @keyframes fall{to{transform:translateY(105vh) translateX(30px)}}
 
-/* =========================================================
-   LUXURY CHRISTMAS ENVELOPE OVERLAY
-   ========================================================= */
+/* LUXURY CHRISTMAS ENVELOPE OVERLAY */
 #envOverlay{
   position:fixed;inset:0;z-index:999;
   background:radial-gradient(circle at 50% 35%, #23533b 0%, #10281c 75%, #091710 100%);
@@ -65,10 +63,7 @@ section{padding:56px 18px;max-width:880px;margin:0 auto}
 .env-stage.opening .env-letter{transform:translateY(-48%) scale(1.03)}
 .env-letter small{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
 .env-letter strong{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,5vw,28px);color:var(--red);margin-top:4px}
-
-.env-pocket{
-  position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:8px;overflow:hidden;
-}
+.env-pocket{position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:8px;overflow:hidden}
 .env-pocket::before{
   content:"";position:absolute;inset:0;
   background:linear-gradient(135deg,#215239 0%,#173b29 100%);
@@ -100,10 +95,9 @@ section{padding:56px 18px;max-width:880px;margin:0 auto}
   filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));
 }
 .env-stage.opening .env-flap{transform:rotateX(180deg);z-index:1}
-
 .env-plate{
   position:absolute;left:50%;bottom:13%;transform:translateX(-50%);
-  z-index:6;width:80%;max-width:320px;
+  z-index:6;width:82%;max-width:340px;
   background:linear-gradient(180deg,#fffdf8,#f5ebd6);
   border:1.5px solid var(--gold);border-radius:6px;
   padding:8px 14px;text-align:center;
@@ -113,30 +107,26 @@ section{padding:56px 18px;max-width:880px;margin:0 auto}
 .env-stage.opening .env-plate{opacity:0}
 .env-plate span{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7a6f63}
 .env-plate .guest-script{
-  font-family:"Great Vibes",cursive;font-size:clamp(24px,5.5vw,31px);
+  font-family:"Great Vibes",cursive;font-size:clamp(24px,5.2vw,30px);
   color:var(--red);line-height:1.15;margin-top:2px;
 }
 
+/* Solid Red Wax Button (No Text) */
 .wax-seal{
   position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);
-  z-index:7;width:74px;height:74px;border-radius:50%;
+  z-index:7;width:72px;height:72px;border-radius:50%;
   background:radial-gradient(circle at 32% 30%, #b8293d, #841524 65%, #570c16 100%);
   border:3px solid rgba(226,194,117,.75);
   box-shadow:0 8px 22px rgba(0,0,0,.48), inset 0 2px 6px rgba(255,255,255,.28), inset 0 -4px 8px rgba(0,0,0,.45);
-  display:grid;place-items:center;text-align:center;
-  color:#f7dfa0;font-family:"Cormorant Garamond",serif;font-weight:700;
   transition:transform .45s ease, opacity .4s ease;
   animation:pulseSeal 2.6s ease-in-out infinite;
 }
 .wax-seal::after{
-  content:"";position:absolute;inset:6px;border-radius:50%;
-  border:1px dashed rgba(247,223,160,.6);
+  content:"";position:absolute;inset:7px;border-radius:50%;
+  border:1px dashed rgba(247,223,160,.55);
 }
-.wax-seal b{font-size:18px;letter-spacing:.06em;line-height:1}
-.wax-seal small{display:block;font-size:8px;letter-spacing:.18em;text-transform:uppercase;margin-top:2px;font-family:Inter,sans-serif}
 .env-stage.opening .wax-seal{transform:translate(-50%,-50%) scale(1.25);opacity:0;animation:none}
 @keyframes pulseSeal{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.48),0 0 0 0 rgba(226,194,117,.45)}50%{box-shadow:0 8px 24px rgba(0,0,0,.55),0 0 0 10px rgba(226,194,117,0)}}
-
 .env-btn{
   margin-top:24px;background:linear-gradient(180deg,#e4c478,#b8923f);
   color:#1f1610;border:none;padding:12px 28px;border-radius:999px;
@@ -145,9 +135,7 @@ section{padding:56px 18px;max-width:880px;margin:0 auto}
 }
 .env-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
 
-/* =========================================================
-   MAIN INVITATION PAGE
-   ========================================================= */
+/* MAIN INVITATION PAGE */
 main{position:relative;z-index:1}
 .hero{text-align:center;padding:34px 18px 10px;background:radial-gradient(ellipse at top,var(--bg2),var(--ivory) 70%)}
 .hero .kick{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
@@ -161,7 +149,7 @@ main{position:relative;z-index:1}
 .ph{max-width:520px;aspect-ratio:3/4;margin:18px auto 0;border:2px dashed var(--gold);border-radius:6px;display:grid;place-items:center;text-align:center;padding:24px;background:var(--card);color:var(--mut)}
 .ph b{font:600 34px "Cormorant Garamond",serif;color:var(--red);display:block}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(80,50,30,.06)}
-input,textarea,select{font:inherit;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%}
+input,textarea,select{font:inherit;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
 textarea{resize:vertical;min-height:70px}
 button{font:inherit;cursor:pointer;border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--ink);padding:10px 20px;font-weight:600}
 button.p{background:var(--red);border-color:var(--red);color:#fff}
@@ -175,32 +163,25 @@ button:disabled{opacity:.5}
 .err{color:var(--red)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .ev{text-align:center}.ev .ic{font-size:26px;color:var(--gold)}.ev h3{font-size:24px;margin:4px 0}
-
-/* Map Preview Grid & Box */
 .map-visual{position:relative;height:240px;border-radius:12px;background:#e8efe6;overflow:hidden;border:2px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.08);margin-top:14px}
 .map-visual iframe{width:100%;height:100%;border:none;display:block}
 .map-visual img{width:100%;height:100%;object-fit:cover;display:block}
-.map-badge{position:absolute;bottom:14px;right:14px;background:var(--red);color:#fff;padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.25);display:flex;align-items:center;gap:6px;text-decoration:none}
 .map-bar{padding:12px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:8px}
-
+.map-link{background:var(--red);color:#fff;padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none}
 .sw{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
 .sw div{text-align:center;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
 .sw span{display:block;aspect-ratio:1;border-radius:50%;border:3px solid var(--card);outline:2px solid var(--gold);margin:0 auto 8px;max-width:96px;box-shadow:0 6px 14px rgba(0,0,0,.18)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:560px){.two{grid-template-columns:1fr}}
-.cnt{font:700 44px "Cormorant Garamond",serif;color:var(--green);text-align:center;line-height:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;max-height:260px;overflow:auto}
 .chip{background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:4px 12px 4px 4px;display:flex;align-items:center;gap:8px;font-size:14px}
-.badge-plus{background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px}
 .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600;font-size:13px;flex:none}
 
-/* 10-Slot Throwback Gallery */
-.gal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
-.gal-slot{aspect-ratio:1;border-radius:10px;overflow:hidden;border:3px solid var(--card);outline:1.5px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,.1);background:var(--card);position:relative;display:grid;place-items:center;text-align:center}
+/* 2-Slot Throwback Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:620px;margin:0 auto}
+@media(max-width:520px){.gal-grid{grid-template-columns:1fr}}
+.gal-slot{aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:4px solid var(--card);outline:1.5px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.1);background:var(--card);position:relative;display:grid;place-items:center;text-align:center}
 .gal-slot img{width:100%;height:100%;object-fit:cover;display:block}
-.gal-empty{border:2.5px dashed var(--gold);outline:none;padding:10px;color:var(--mut);font-size:12px;background:rgba(255,253,248,.6)}
-.gal-empty span{font:600 18px "Cormorant Garamond",serif;color:var(--gold);display:block}
+.gal-empty{border:2.5px dashed var(--gold);outline:none;padding:16px;color:var(--mut);font-size:13px;background:rgba(255,253,248,.6)}
+.gal-empty span{font:600 22px "Cormorant Garamond",serif;color:var(--gold);display:block}
 
 .post{margin-top:14px}.ph2{display:flex;gap:10px;align-items:center}.ph2 small{color:var(--mut);display:block}
 .post p{white-space:pre-wrap;margin:10px 0;overflow-wrap:anywhere}
@@ -209,7 +190,7 @@ button:disabled{opacity:.5}
 .cm small{color:var(--mut)}.cm div{overflow-wrap:anywhere;white-space:pre-wrap}
 .acts{display:flex;gap:4px;flex-wrap:wrap}
 .adm label{display:block;font-size:13px;color:var(--mut);margin:12px 0 4px;font-weight:600}
-.slot-admin{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
+.slot-admin{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:8px}
 .slot-box{border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--ivory);font-size:13px}
 footer{text-align:center;padding:34px 18px;color:var(--mut);font-size:14px}
 .hero{position:relative;overflow:hidden}.hero>*{position:relative;z-index:1}
@@ -232,9 +213,15 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
 <body class="locked">
 <div id="snow"></div>
 
-<!-- =========================================================
-     INTERACTIVE CHRISTMAS ENVELOPE COVER
-     ========================================================= -->
+<!-- HIDDEN STATIC FORM FOR NETLIFY FORMS DETECTION -->
+<form name="rsvp" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field">
+  <input type="text" name="name">
+  <input type="text" name="status">
+  <input type="text" name="guestId">
+</form>
+
+<!-- INTERACTIVE CHRISTMAS ENVELOPE COVER -->
 <div id="envOverlay" role="dialog" aria-modal="true" aria-label="Christmas Party Invitation Envelope">
   <div class="env-caption">✦ Kicky’s &amp; Springs of Hope Kununurra ✦</div>
 
@@ -248,18 +235,12 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
       <div class="env-bottom"></div>
       <div class="env-flap"></div>
 
-      <!-- Wax Seal -->
-      <div class="wax-seal">
-        <div>
-          <b>K&amp;S</b>
-          <small>Open</small>
-        </div>
-      </div>
+      <!-- Plain Red Wax Button (No Words) -->
+      <div class="wax-seal" aria-hidden="true"></div>
 
-      <!-- General Invitation Plate -->
       <div class="env-plate">
         <span>You Are Warmly Invited</span>
-        <div class="guest-script">Christmas Celebration</div>
+        <div class="guest-script">Christmas Celebration 2026</div>
       </div>
     </div>
   </div>
@@ -280,22 +261,12 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
   <section id="rsvp">
     <p class="orn">✦</p>
     <h2>Will you join us?</h2>
-    <p class="sub">Let us know so we can save you a seat. You can change your answer any time.</p>
+    <p class="sub">Select your name from the list below and let us know if you can make it. You can update your answer anytime.</p>
     <div class="card">
       <div id="rsvpNote" class="sub" style="margin-top:0"></div>
-      <select id="rsel" hidden style="margin-bottom:10px"></select>
-      <div class="row">
-        <div style="flex:2 1 220px">
-          <input id="rname" placeholder="Your full name" maxlength="60" autocomplete="name">
-        </div>
-        <div style="flex:1 1 170px">
-          <select id="rguests" aria-label="Number of guests">
-            <option value="1">1 Guest (Just me)</option>
-            <option value="2">2 Guests (+1)</option>
-            <option value="3">3 Guests (+2 max)</option>
-          </select>
-        </div>
-      </div>
+      <select id="rsel" aria-label="Choose your name">
+        <option value="">▾ Select your name from the guest list</option>
+      </select>
       <div class="row big" style="margin-top:14px">
         <button class="g" id="yes">YES – I’m going!</button>
         <button class="p" id="no">NO – I can’t make it</button>
@@ -311,11 +282,10 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
       <p class="sub" id="intro"></p>
       <div class="grid" id="evgrid"></div>
 
-      <!-- Live / Clickable Interactive Map Slot -->
       <div class="map-visual" id="mapVisual"></div>
       <div class="map-bar">
         <span>📍 <strong>Lily Lagoon Resort</strong> — <span id="mapAddrText">50 Casuarina Way, Kununurra, WA 6743</span></span>
-        <a id="mapCard" class="map-badge" target="_blank" rel="noopener" title="Open in Google Maps">View Interactive Map ↗</a>
+        <a id="mapCard" class="map-link" target="_blank" rel="noopener">Get Directions ↗</a>
       </div>
     </div>
   </section>
@@ -332,55 +302,35 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
     </div>
   </section>
 
-  <section class="band" id="who">
+  <section class="band" id="wallS">
     <div>
       <p class="orn">✦</p>
-      <h2>Who’s Coming?</h2>
-      <p class="sub">Total confirmed seats include your extra guests (up to 3 per RSVP). Guests who can’t make it aren’t listed.</p>
-      <div class="two">
-        <div class="card">
-          <div class="cnt" id="gc">0</div>
-          <h3 style="text-align:center;color:var(--green)">Going (Total Guests)</h3>
-          <div class="chips" id="going"></div>
+      <h2>The Party Wall</h2>
+      <p class="sub">Share your excitement, ask questions and post photos before the big night.</p>
+      <div class="card" id="comp">
+        <textarea id="ptext" placeholder="What’s on your mind?" maxlength="1000"></textarea>
+        <div class="row" style="margin-top:10px;align-items:center">
+          <span id="pimgInfo" style="color:var(--mut);font-size:14px"></span>
+          <button id="pimgB" class="s" style="flex:0 0 auto">📷 Add photo</button>
+          <input type="file" id="pimg" accept="image/*" hidden>
+          <button class="p" id="ppost" style="flex:0 0 auto">Post</button>
         </div>
-        <div class="card">
-          <div class="cnt" id="pc" style="color:var(--gold)">0</div>
-          <h3 style="text-align:center;color:var(--gold)">Pending</h3>
-          <div class="chips" id="pend"></div>
-        </div>
+        <div class="msg err" id="pmsg"></div>
       </div>
+      <div id="feed"></div>
     </div>
   </section>
 
-  <section id="wallS">
+  <section id="memories">
     <p class="orn">✦</p>
-    <h2>The Party Wall</h2>
-    <p class="sub">Share your excitement, ask questions and post photos before the big night.</p>
-    <div class="card" id="comp">
-      <textarea id="ptext" placeholder="What’s on your mind?" maxlength="1000"></textarea>
-      <div class="row" style="margin-top:10px;align-items:center">
-        <span id="pimgInfo" style="color:var(--mut);font-size:14px"></span>
-        <button id="pimgB" class="s" style="flex:0 0 auto">📷 Add photo</button>
-        <input type="file" id="pimg" accept="image/*" hidden>
-        <button class="p" id="ppost" style="flex:0 0 auto">Post</button>
-      </div>
-      <div class="msg err" id="pmsg"></div>
-    </div>
-    <div id="feed"></div>
-  </section>
-
-  <section class="band" id="memories">
-    <div>
-      <p class="orn">✦</p>
-      <h2>Throwback Memories</h2>
-      <p class="sub">A look back at 10 memories we have shared at Christmas celebrations of years gone by.</p>
-      <div class="gal-grid" id="gal"></div>
-    </div>
+    <h2>Throwback Memories</h2>
+    <p class="sub">Here’s to making even more wonderful memories and having twice the fun together at this year’s Christmas celebration!</p>
+    <div class="gal-grid" id="gal"></div>
   </section>
 
   <section id="adminS" hidden>
     <h2>Organizer Panel</h2>
-    <p class="sub">Upload your poster, map picture, or 10 throwback photos, edit event details, and manage the guest list.</p>
+    <p class="sub">Upload your poster, map picture, or 2 throwback photos, edit event details, and manage the guest list.</p>
     <div class="card">
       <div class="adm" id="adm">
 
@@ -403,7 +353,7 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
           <div><label>Address</label><input id="a_address"></div>
         </div>
 
-        <label>3. Clickable Map Picture &amp; Google Maps Link</label>
+        <label>3. Map Picture &amp; Google Maps Link</label>
         <div class="row">
           <input type="file" id="amapimg" accept="image/*">
           <input id="a_mapImg" placeholder="Custom map image URL/filename (optional)">
@@ -413,7 +363,7 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
         <label>4. Dress Code Text</label>
         <textarea id="a_dress"></textarea>
 
-        <label>5. Throwback Memories (10 Photo Slots — upload or paste filename/URL per slot)</label>
+        <label>5. Throwback Memories (2 Photo Slots — upload or paste filename/URL per slot)</label>
         <div class="slot-admin" id="slotAdmin"></div>
 
         <p style="margin-top:16px">
@@ -422,10 +372,10 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
         </p>
 
         <label style="margin-top:22px">6. Invited Guests (one name per line)</label>
-        <textarea id="ainv" style="min-height:130px" placeholder="Sarah Jenkins&#10;David &amp; Grace Miller"></textarea>
+        <textarea id="ainv" style="min-height:140px"></textarea>
         <p><button class="g" id="ainvS">Save Guest List</button></p>
 
-        <label>7. RSVP Responses (click ✕ to remove an entry)</label>
+        <label>7. Local RSVP Responses on this device (click ✕ to remove)</label>
         <div id="arsvp" class="chips"></div>
       </div>
     </div>
@@ -441,21 +391,31 @@ button{transition:transform .2s,box-shadow .2s}button:not(:disabled):hover{trans
 
 <script>
 // =========================================================================
-// CUSTOMIZE YOUR DEFAULT FILES HERE BEFORE UPLOADING TO NETLIFY (OPTIONAL)
+// PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW (ends with /exec)
 // =========================================================================
+const GOOGLE_SHEET_URL = ""; // e.g. "https://script.google.com/macros/s/AKfycb.../exec"
 const DEFAULT_POSTER = "image_0.png";
-const DEFAULT_MAP_IMAGE = ""; // e.g. "kununurra-map.jpg"
-const DEFAULT_PHOTOS = [
-  "", // Slot 1
-  "", // Slot 2
-  "", // Slot 3
-  "", // Slot 4
-  "", // Slot 5
-  "", // Slot 6
-  "", // Slot 7
-  "", // Slot 8
-  "", // Slot 9
-  ""  // Slot 10
+const DEFAULT_MAP_IMAGE = "";
+const DEFAULT_PHOTOS = ["", ""]; // 2 Throwback Memory Slots
+const DEFAULT_GUESTS = [
+  "Kwame",
+  "Garab",
+  "Kaz",
+  "Han",
+  "El",
+  "Thinley",
+  "Karma",
+  "Noma",
+  "Winnie",
+  "Loveness",
+  "Roy",
+  "Edgar",
+  "Tarai",
+  "Jackie",
+  "Raymond",
+  "Faith",
+  "Prim",
+  "Angel"
 ];
 const ORGANIZER_PIN = "2026";
 // =========================================================================
@@ -474,23 +434,33 @@ const D = {
   gallery: [...DEFAULT_PHOTOS]
 };
 
-const STORE_KEY = "kickys_xmas_2026_v5";
-const UID_KEY = "kickys_xmas_uid_v5";
+const STORE_KEY = "kickys_xmas_2026_v8";
+const UID_KEY = "kickys_xmas_uid_v8";
+const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guest";
 
 function loadStore() {
   try {
     const raw = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
     const savedGal = Array.isArray(raw.ev?.gallery) ? raw.ev.gallery : [];
-    const mergedGal = Array.from({ length: 10 }, (_, i) => savedGal[i] || DEFAULT_PHOTOS[i] || "");
+    const mergedGal = Array.from({ length: 2 }, (_, i) => savedGal[i] || DEFAULT_PHOTOS[i] || "");
+    const savedInv = Array.isArray(raw.inv) && raw.inv.length
+      ? raw.inv
+      : DEFAULT_GUESTS.map(n => ({ id: slug(n), name: n }));
     return {
       ev: { ...D, ...(raw.ev || {}), gallery: mergedGal },
-      inv: Array.isArray(raw.inv) ? raw.inv : [],
+      inv: savedInv,
       rsvps: Array.isArray(raw.rsvps) ? raw.rsvps : [],
       posts: Array.isArray(raw.posts) ? raw.posts : [],
       cms: Array.isArray(raw.cms) ? raw.cms : []
     };
   } catch (e) {
-    return { ev: { ...D, gallery: [...DEFAULT_PHOTOS] }, inv: [], rsvps: [], posts: [], cms: [] };
+    return {
+      ev: { ...D, gallery: [...DEFAULT_PHOTOS] },
+      inv: DEFAULT_GUESTS.map(n => ({ id: slug(n), name: n })),
+      rsvps: [],
+      posts: [],
+      cms: []
+    };
   }
 }
 
@@ -518,11 +488,44 @@ const col = s => { let h = 0; for (const c of String(s)) h = (h * 31 + c.charCod
 const av = n => `<span class="av" style="background:${col(n)}">${esc((n || "?").trim().split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase())}</span>`;
 const names = () => Object.fromEntries(S.rsvps.map(r => [r.id, r.name]));
 const myR = () => S.rsvps.find(r => r.id === uid);
-const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guest";
 
-// =========================================================================
-// ENVELOPE ANIMATION LOGIC
-// =========================================================================
+// Sync RSVP to Netlify Forms & Google Sheets simultaneously
+async function syncRsvpToCloud(entry) {
+  try {
+    const formData = new URLSearchParams();
+    formData.append("form-name", "rsvp");
+    formData.append("name", entry.name);
+    formData.append("status", entry.status === "yes" ? "YES" : "NO");
+    formData.append("guestId", entry.id);
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+  } catch (err) {
+    console.warn("Netlify form sync skipped:", err);
+  }
+
+  if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.startsWith("http")) {
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          name: entry.name,
+          status: entry.status === "yes" ? "YES" : "NO",
+          guestId: entry.id
+        })
+      });
+    } catch (err) {
+      console.warn("Google Sheet sync error:", err);
+    }
+  }
+}
+
+// Envelope Controls
 function openEnvelope() {
   const stage = $("#envStage");
   const overlay = $("#envOverlay");
@@ -546,7 +549,6 @@ $("#envStage").onclick = openEnvelope;
 $("#openEnvBtn").onclick = openEnvelope;
 $("#reopenEnvBtn").onclick = resetEnvelope;
 
-// Compress uploaded images cleanly for browser storage
 function fileToDataUrl(file, maxW = 1000) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -568,7 +570,6 @@ function fileToDataUrl(file, maxW = 1000) {
   });
 }
 
-// Snowflakes
 for (let i = 0; i < 22; i++) {
   const f = document.createElement("i");
   f.style.left = Math.random() * 100 + "%";
@@ -577,10 +578,8 @@ for (let i = 0; i < 22; i++) {
   $("#snow").appendChild(f);
 }
 
-function defaultMapSVG(venue, address, mapUrl) {
-  return `
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.3541484545224!2d128.74020951167448!3d-15.795155948958299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2ca3743be7c5145b%3A0xe5a36371bfccb5ef!2sLily%20Lagoon%20Resort!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
-  <a class="map-badge" target="_blank" href="${esc(mapUrl)}" rel="noopener">📍 Open Interactive Map</a>`;
+function defaultMapEmbed() {
+  return `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.3541484545224!2d128.74020951167448!3d-15.795155948958299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2ca3743be7c5145b%3A0xe5a36371bfccb5ef!2sLily%20Lagoon%20Resort!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>`;
 }
 
 function rEvent() {
@@ -608,66 +607,44 @@ function rEvent() {
   $("#mapCard").href = mapUrl;
   $("#mapAddrText").textContent = e.address;
   $("#mapVisual").innerHTML = e.mapImg
-    ? `<img src="${esc(e.mapImg)}" alt="Map to ${esc(e.venue)}"><a class="map-badge" target="_blank" href="${esc(mapUrl)}" rel="noopener">📍 Open In Google Maps</a>`
-    : defaultMapSVG(e.venue, e.address, mapUrl);
+    ? `<img src="${esc(e.mapImg)}" alt="Map to ${esc(e.venue)}">`
+    : defaultMapEmbed();
 
-  const slots = Array.from({ length: 10 }, (_, idx) => (e.gallery && e.gallery[idx]) || "");
+  // Render 2 Throwback Memory Slots
+  const slots = Array.from({ length: 2 }, (_, idx) => (e.gallery && e.gallery[idx]) || "");
   $("#gal").innerHTML = slots.map((src, idx) => src
     ? `<div class="gal-slot"><img src="${esc(src)}" loading="lazy" alt="Christmas memory ${idx + 1}"></div>`
-    : `<div class="gal-slot gal-empty"><div><span>#${idx + 1}</span>Memory Space</div></div>`
+    : `<div class="gal-slot gal-empty"><div><span>Memory #${idx + 1}</span>Photo Space</div></div>`
   ).join("");
 }
 
 function rRsvp() {
   const r = myR();
   const sl = $("#rsel");
-  sl.hidden = !S.inv.length || !!r;
   if (document.activeElement !== sl) {
-    const v = sl.value;
-    sl.innerHTML = '<option value="">▾ Choose your name from the guest list</option>' +
-      S.inv.slice().sort((a, b) => a.name.localeCompare(b.name)).map(g => `<option>${esc(g.name)}</option>`).join("") +
-      '<option value="__o">My name isn’t listed</option>';
-    sl.value = v;
+    const prev = sl.value;
+    sl.innerHTML = '<option value="">▾ Select your name from the guest list</option>' +
+      S.inv.map(g => `<option value="${esc(g.name)}">${esc(g.name)}</option>`).join("");
+    if (r) sl.value = r.name;
+    else if (prev) sl.value = prev;
   }
 
   if (r) {
-    if (document.activeElement !== $("#rname")) $("#rname").value = r.name;
-    if (document.activeElement !== $("#rguests")) $("#rguests").value = String(r.guests || 1);
-    const totalSeats = Number(r.guests || 1);
     $("#rsvpNote").textContent = r.status === "yes"
-      ? `Your current answer: YES, you’re going (${totalSeats} ${totalSeats === 1 ? "guest" : "guests"}) 🎄`
+      ? `Your current answer: YES, you’re going 🎄`
       : `Your current answer: NO, can’t make it`;
     $("#yes").classList.toggle("sel", r.status === "yes");
     $("#no").classList.toggle("sel", r.status === "no");
   } else {
-    $("#rsvpNote").textContent = S.inv.length
-      ? "Pick your name from the list or type it below (max 3 guests per RSVP)."
-      : "Enter your name and choose how many guests are coming (max 3).";
+    $("#rsvpNote").textContent = "";
     $("#yes").classList.remove("sel");
     $("#no").classList.remove("sel");
   }
 
-  const goingList = S.rsvps.filter(x => x.status === "yes").sort((a, b) => a.name.localeCompare(b.name));
-  const totalGoingSeats = goingList.reduce((sum, x) => sum + Math.min(3, Math.max(1, Number(x.guests) || 1)), 0);
-  const done = new Set(S.rsvps.map(x => x.name.trim().toLowerCase()));
-  const pend = S.inv.filter(g => !done.has(g.name.trim().toLowerCase())).sort((a, b) => a.name.localeCompare(b.name));
-
-  $("#gc").textContent = totalGoingSeats;
-  $("#pc").textContent = pend.length;
-
-  $("#going").innerHTML = goingList.map(g => {
-    const qty = Math.min(3, Math.max(1, Number(g.guests) || 1));
-    const extra = qty > 1 ? `<span class="badge-plus">+${qty - 1}</span>` : "";
-    return `<span class="chip">${av(g.name)}${esc(g.name)}${extra}</span>`;
-  }).join("") || '<span class="sub">No one yet. Be the first!</span>';
-
-  $("#pend").innerHTML = pend.map(g => `<span class="chip">${av(g.name)}${esc(g.name)}</span>`).join("") || '<span class="sub">Everyone on the list has replied.</span>';
-
   if (admin) {
-    $("#arsvp").innerHTML = S.rsvps.map(x => {
-      const qty = x.status === "yes" ? `, ${x.guests || 1} guest${(x.guests || 1) > 1 ? "s" : ""}` : "";
-      return `<span class="chip">${esc(x.name)} (${x.status}${qty}) <button class="s" data-delr="${x.id}">✕</button></span>`;
-    }).join("") || '<span style="color:var(--mut);font-size:13px">No RSVPs yet.</span>';
+    $("#arsvp").innerHTML = S.rsvps.map(x =>
+      `<span class="chip">${esc(x.name)} (${x.status.toUpperCase()}) <button class="s" data-delr="${x.id}">✕</button></span>`
+    ).join("") || '<span style="color:var(--mut);font-size:13px">No RSVPs recorded on this device yet.</span>';
   }
 }
 
@@ -678,265 +655,6 @@ function rWall() {
   }
   dirty = false;
   const nm = names(), can = id => admin || id === uid;
-  const me = !!myR();
-  $("#comp").style.opacity = me ? 1 : .75;
-  $("#ppost").disabled = !me;
-  $("#ptext").placeholder = me ? "What’s on your mind?" : "RSVP above first so guests know who is posting!";
 
   $("#feed").innerHTML = S.posts.slice().sort((a, b) => b.at - a.at).map(p => {
     const n = nm[p.uid] || p.name || "Guest";
-    const cs = S.cms.filter(c => c.postId === p.id).sort((a, b) => a.at - b.at);
-    return `<article class="card post" data-p="${p.id}">
-      <div class="ph2">${av(n)}<div><b>${esc(n)}</b><small>${when(p.at)}${p.edited ? " · edited" : ""}</small></div>
-        <span class="acts" style="margin-left:auto">${can(p.uid) ? `<button class="s" data-ed="${p.id}">Edit</button><button class="s" data-delp="${p.id}">${arm === "p" + p.id ? "Tap again to confirm" : "Delete"}</button>` : ""}</span>
-      </div>
-      ${editing === p.id ? `<textarea id="edt">${esc(p.text)}</textarea><button class="p s" data-sv="${p.id}">Save</button> <button class="s" data-cx>Cancel</button>` : `<p>${esc(p.text)}</p>`}
-      ${p.img ? `<img class="pi" src="${esc(p.img)}" alt="">` : ""}
-      ${cs.map(c => `<div class="cm"><b>${esc(nm[c.uid] || c.name || "Guest")}</b> <small>${when(c.at)}${c.edited ? " · edited" : ""}</small>
-        ${editing === c.id ? `<textarea id="edt">${esc(c.text)}</textarea><button class="p s" data-svc="${c.id}">Save</button> <button class="s" data-cx>Cancel</button>` : `<div>${esc(c.text)}</div>`}
-        ${can(c.uid) && editing !== c.id ? `<span class="acts"><button class="s" data-edc="${c.id}">Edit</button><button class="s" data-delc="${c.id}">${arm === "c" + c.id ? "Tap again to confirm" : "Delete"}</button></span>` : ""}
-      </div>`).join("")}
-      ${me ? `<div class="row" style="margin-top:10px"><input placeholder="Write a comment…" maxlength="500" data-ci="${p.id}"><button class="s" data-cs="${p.id}" style="flex:0 0 auto">Reply</button></div>` : ""}
-    </article>`;
-  }).join("") || '<p class="sub">No posts yet. Start the conversation!</p>';
-}
-
-function all() { rEvent(); rRsvp(); rWall(); }
-
-$("#feed").addEventListener("focusout", () => { if (dirty && !editing) setTimeout(rWall, 200); });
-$("#feed").addEventListener("click", e => {
-  const t = e.target.closest("button");
-  if (!t) return;
-  const d = t.dataset;
-  if (d.ed) { editing = d.ed; rWall(); }
-  else if (d.edc) { editing = d.edc; rWall(); }
-  else if ("cx" in d) { editing = null; rWall(); }
-  else if (d.sv) {
-    const p = S.posts.find(x => x.id === d.sv);
-    if (p) { p.text = $("#edt").value.trim(); p.edited = true; saveStore(); }
-    editing = null; rWall();
-  } else if (d.svc) {
-    const c = S.cms.find(x => x.id === d.svc);
-    if (c) { c.text = $("#edt").value.trim(); c.edited = true; saveStore(); }
-    editing = null; rWall();
-  } else if (d.delp && ok("p" + d.delp)) {
-    S.cms = S.cms.filter(c => c.postId !== d.delp);
-    S.posts = S.posts.filter(p => p.id !== d.delp);
-    saveStore(); rWall();
-  } else if (d.delc && ok("c" + d.delc)) {
-    S.cms = S.cms.filter(c => c.id !== d.delc);
-    saveStore(); rWall();
-  } else if (d.cs) {
-    const i = document.querySelector(`[data-ci="${d.cs}"]`), v = i.value.trim();
-    const r = myR();
-    if (v && r) {
-      i.value = "";
-      S.cms.push({ id: "c_" + Date.now(), postId: d.cs, uid, name: r.name, text: v, at: Date.now() });
-      saveStore(); rWall();
-    }
-  }
-});
-
-function rsvp(status) {
-  const m = $("#rmsg");
-  m.className = "msg";
-  const n = $("#rname").value.trim();
-  const guests = Math.min(3, Math.max(1, parseInt($("#rguests").value, 10) || 1));
-
-  if (n.length < 2) {
-    m.className = "msg err";
-    m.textContent = "Please enter your name first.";
-    return;
-  }
-  if (S.rsvps.some(r => r.id !== uid && r.name.trim().toLowerCase() === n.toLowerCase())) {
-    m.className = "msg err";
-    m.textContent = "That name has already RSVP’d. Please ask the organizer if you need to update it.";
-    return;
-  }
-
-  const idx = S.rsvps.findIndex(r => r.id === uid);
-  const entry = { id: uid, name: n, status, guests: status === "yes" ? guests : 0, at: Date.now() };
-  if (idx >= 0) S.rsvps[idx] = entry;
-  else S.rsvps.push(entry);
-
-  saveStore();
-  m.textContent = status === "yes"
-    ? `🎄 Thank you, ${n}! Reserved for ${guests} ${guests === 1 ? "guest" : "guests"}.`
-    : `Thanks for letting us know, ${n}. We’ll miss you!`;
-  all();
-}
-
-$("#rsel").onchange = e => {
-  const v = e.target.value;
-  if (v && v !== "__o") $("#rname").value = v;
-  else if (v === "__o") { $("#rname").value = ""; $("#rname").focus(); }
-};
-$("#yes").onclick = () => rsvp("yes");
-$("#no").onclick = () => rsvp("no");
-
-$("#pimgB").onclick = () => $("#pimg").click();
-$("#pimg").onchange = async e => {
-  const f = e.target.files[0];
-  if (!f) return;
-  $("#pimgInfo").textContent = "Processing photo…";
-  try {
-    pendingImg = await fileToDataUrl(f, 900);
-    $("#pimgInfo").textContent = "Photo attached ✓";
-  } catch (x) {
-    $("#pimgInfo").textContent = "";
-    $("#pmsg").textContent = "Could not load photo.";
-  }
-};
-
-$("#ppost").onclick = () => {
-  const r = myR();
-  if (!r) { $("#pmsg").textContent = "Please submit your RSVP above before posting."; return; }
-  const t = $("#ptext").value.trim();
-  if (!t && !pendingImg) return;
-  $("#pmsg").textContent = "";
-  S.posts.unshift({ id: "p_" + Date.now(), uid, name: r.name, text: t, img: pendingImg || "", at: Date.now() });
-  saveStore();
-  $("#ptext").value = "";
-  pendingImg = null;
-  $("#pimgInfo").textContent = "";
-  rWall();
-};
-
-// Organizer Admin Panel
-const F = ["title", "intro", "date", "time", "venue", "address", "maps", "dress", "poster", "mapImg"];
-function buildAdminSlots() {
-  const wrap = $("#slotAdmin");
-  wrap.innerHTML = Array.from({ length: 10 }, (_, i) => `
-    <div class="slot-box">
-      <strong>Photo Slot #${i + 1}</strong>
-      <input type="file" accept="image/*" data-slot-file="${i}" style="margin:6px 0;padding:6px;font-size:12px">
-      <input type="text" data-slot-url="${i}" placeholder="or filename / URL" value="${esc(S.ev.gallery[i] || "")}" style="padding:7px 9px;font-size:12px">
-    </div>
-  `).join("");
-
-  wrap.querySelectorAll("[data-slot-file]").forEach(inp => {
-    inp.onchange = async e => {
-      const idx = Number(e.target.dataset.slotFile);
-      const file = e.target.files[0];
-      if (!file) return;
-      $("#amsg").textContent = ` Processing Slot #${idx + 1}…`;
-      const dataUrl = await fileToDataUrl(file, 900);
-      S.ev.gallery[idx] = dataUrl;
-      wrap.querySelector(`[data-slot-url="${idx}"]`).value = dataUrl;
-      saveStore();
-      rEvent();
-      $("#amsg").textContent = ` Slot #${idx + 1} updated ✓`;
-    };
-  });
-}
-
-function fillAdmin() {
-  F.forEach(k => { if ($("#a_" + k)) $("#a_" + k).value = S.ev[k] || ""; });
-  $("#ainv").value = S.inv.map(g => g.name).join("\n");
-  buildAdminSlots();
-}
-
-$("#orgToggle").onclick = () => {
-  if (admin) {
-    admin = false;
-    $("#adminS").hidden = true;
-    $("#orgToggle").textContent = "🔑 Organizer Login";
-    rRsvp(); rWall();
-    return;
-  }
-  const pin = prompt("Enter Organizer PIN (Default: 2026):");
-  if (pin === ORGANIZER_PIN) {
-    admin = true;
-    $("#adminS").hidden = false;
-    $("#orgToggle").textContent = "🔒 Lock Organizer Panel";
-    fillAdmin();
-    rRsvp(); rWall();
-    $("#adminS").scrollIntoView({ behavior: "smooth" });
-  } else if (pin !== null) {
-    alert("Incorrect PIN.");
-  }
-};
-
-$("#aposter").onchange = async e => {
-  const f = e.target.files[0];
-  if (!f) return;
-  $("#amsg").textContent = " Processing poster…";
-  const url = await fileToDataUrl(f, 1200);
-  $("#a_poster").value = url;
-  S.ev.poster = url;
-  saveStore();
-  rEvent();
-  $("#amsg").textContent = " Poster updated ✓";
-};
-
-$("#amapimg").onchange = async e => {
-  const f = e.target.files[0];
-  if (!f) return;
-  $("#amsg").textContent = " Processing map…";
-  const url = await fileToDataUrl(f, 1200);
-  $("#a_mapImg").value = url;
-  S.ev.mapImg = url;
-  saveStore();
-  rEvent();
-  $("#amsg").textContent = " Map image updated ✓";
-};
-
-$("#asave").onclick = () => {
-  F.forEach(k => { if ($("#a_" + k)) S.ev[k] = $("#a_" + k).value.trim(); });
-  document.querySelectorAll("[data-slot-url]").forEach(inp => {
-    const idx = Number(inp.dataset.slotUrl);
-    S.ev.gallery[idx] = inp.value.trim();
-  });
-  saveStore();
-  rEvent();
-  $("#amsg").textContent = " All details & photos saved ✓";
-};
-
-$("#ainvS").onclick = () => {
-  const want = [...new Set($("#ainv").value.split("\n").map(s => s.trim()).filter(Boolean))];
-  S.inv = want.map(n => ({ id: slug(n), name: n }));
-  saveStore();
-  rRsvp();
-  $("#amsg").textContent = " Guest list saved ✓";
-};
-
-$("#arsvp").onclick = e => {
-  const id = e.target.dataset.delr;
-  if (!id) return;
-  if (arm === "r" + id) {
-    arm = null;
-    S.rsvps = S.rsvps.filter(x => x.id !== id);
-    saveStore();
-    rRsvp();
-  } else {
-    const b = e.target;
-    arm = "r" + id;
-    b.textContent = "Sure?";
-    setTimeout(() => { arm = null; b.textContent = "✕"; }, 4000);
-  }
-};
-
-// Initial render & scroll reveal animations
-all();
-if (!matchMedia("(prefers-reduced-motion:reduce)").matches) {
-  document.documentElement.classList.add("js");
-  const hh = document.querySelector(".hero");
-  for (let i = 0; i < 14; i++) {
-    const s = document.createElement("span");
-    s.className = "star";
-    s.textContent = i % 3 ? "✦" : "✧";
-    s.style.cssText = `left:${Math.random() * 96}%;top:${Math.random() * 92}%;font-size:${10 + Math.random() * 14}px;animation-delay:${Math.random() * 4}s;animation-duration:${2.5 + Math.random() * 3}s`;
-    hh.appendChild(s);
-  }
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-  }), { threshold: .12 });
-  document.querySelectorAll(".hero .kick,.hero h1,section>.orn,section>h2,section>.sub,.band>div>.orn,.band>div>h2,.band>div>.sub,#rsvp .card,.sw div,.two>.card,#comp,#evgrid,#mapVisual").forEach(el => {
-    el.classList.add("rv");
-    if (el.matches(".sw div")) el.style.transitionDelay = [...el.parentNode.children].indexOf(el) * .12 + "s";
-    io.observe(el);
-  });
-}
-</script>
-</body>
-</html>
