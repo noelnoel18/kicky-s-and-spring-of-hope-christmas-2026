@@ -192,7 +192,6 @@ button:disabled{opacity:.5}
 .sw div{text-align:center;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
 .sw span{display:block;aspect-ratio:1;border-radius:50%;border:3px solid var(--card);outline:2px solid var(--gold);margin:0 auto 8px;max-width:96px;box-shadow:0 6px 14px rgba(0,0,0,.18)}
 
-/* Who's Coming Section (Going & Not Going) */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:560px){.two{grid-template-columns:1fr}}
 .cnt{font:700 44px "Cormorant Garamond",serif;color:var(--green);text-align:center;line-height:1}
@@ -491,8 +490,8 @@ const D = {
   gallery: [...DEFAULT_PHOTOS]
 };
 
-const STORE_KEY = "kickys_xmas_2026_v16";
-const UID_KEY = "kickys_xmas_uid_v16";
+const STORE_KEY = "kickys_xmas_2026_v17";
+const UID_KEY = "kickys_xmas_uid_v17";
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guest";
 
 function loadStore() {
@@ -717,7 +716,6 @@ function rRsvp() {
     box.innerHTML = "";
   }
 
-  // Merge cloud RSVPs + local device RSVPs for Who's Coming? (Going & Not Going)
   const mergedMap = new Map();
   (S.cloudRsvps || []).forEach(item => {
     if (item && item.name) {
