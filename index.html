@@ -192,7 +192,6 @@ button:disabled{opacity:.5}
 .sw div{text-align:center;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
 .sw span{display:block;aspect-ratio:1;border-radius:50%;border:3px solid var(--card);outline:2px solid var(--gold);margin:0 auto 8px;max-width:96px;box-shadow:0 6px 14px rgba(0,0,0,.18)}
 
-/* Who's Coming Section (Going Only - Centered Single Card) */
 .one{max-width:560px;margin:0 auto}
 .cnt{font:700 48px "Cormorant Garamond",serif;color:var(--green);text-align:center;line-height:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center;max-height:280px;overflow:auto}
@@ -485,8 +484,8 @@ const D = {
   gallery: [...DEFAULT_PHOTOS]
 };
 
-const STORE_KEY = "kickys_xmas_2026_v18";
-const UID_KEY = "kickys_xmas_uid_v18";
+const STORE_KEY = "kickys_xmas_2026_v19";
+const UID_KEY = "kickys_xmas_uid_v19";
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guest";
 
 function loadStore() {
@@ -641,7 +640,7 @@ function rEvent() {
     window._pk = pk;
     $("#posterBox").innerHTML = e.poster
       ? `<div class="pw"><img class="poster" src="${esc(e.poster)}" alt="Christmas party invitation"></div>`
-      : `<div class="ph"><div><b>Your poster here</b>Organizers: click "Organizer Login" in the footer (PIN: 2026) to upload your custom Christmas poster.</div></div>`;
+      : `<div class="ph"><div><b>Your poster here</b>Organizers: click "Organizer Login" in the footer to upload your custom Christmas poster.</div></div>`;
   }
 
   $("#evgrid").innerHTML = [
@@ -906,7 +905,7 @@ $("#orgToggle").onclick = () => {
     rRsvp(); rWall();
     return;
   }
-  const pin = prompt("Enter Organizer PIN (Default: 2026):");
+  const pin = prompt("Enter Organizer PIN:");
   if (pin === ORGANIZER_PIN) {
     admin = true;
     $("#adminS").hidden = false;
