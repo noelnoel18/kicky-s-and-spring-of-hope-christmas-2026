@@ -484,8 +484,8 @@ const D = {
   gallery: [...DEFAULT_PHOTOS]
 };
 
-const STORE_KEY = "kickys_xmas_2026_v19";
-const UID_KEY = "kickys_xmas_uid_v19";
+const STORE_KEY = "kickys_xmas_2026_v20";
+const UID_KEY = "kickys_xmas_uid_v20";
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guest";
 
 function loadStore() {
@@ -541,19 +541,25 @@ const av = n => `<span class="av" style="background:${col(n)}">${esc((n || "?").
 const names = () => Object.fromEntries(S.rsvps.map(r => [r.id, r.name]));
 const myR = () => S.rsvps.find(r => r.id === uid);
 
-async function fetchLiveAttendance() {
+function fetchLiveAttendance() {
   if (!GOOGLE_SHEET_URL || !GOOGLE_SHEET_URL.includes("/exec")) return;
-  try {
-    const res = await fetch(GOOGLE_SHEET_URL + "?t=" + Date.now());
-    const data = await res.json();
-    if (Array.isArray(data.rsvps)) {
+  const cbName = "rsvpCb_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
+  const script = document.createElement("script");
+  window[cbName] = function(data) {
+    if (data && Array.isArray(data.rsvps)) {
       S.cloudRsvps = data.rsvps;
       saveStore();
       rRsvp();
     }
-  } catch (err) {
-    console.warn("Could not fetch live attendance:", err);
-  }
+    delete window[cbName];
+    if (script.parentNode) script.parentNode.removeChild(script);
+  };
+  script.onerror = function() {
+    delete window[cbName];
+    if (script.parentNode) script.parentNode.removeChild(script);
+  };
+  script.src = GOOGLE_SHEET_URL + "?callback=" + cbName + "&t=" + Date.now();
+  document.body.appendChild(script);
 }
 
 async function syncRsvpToCloud(entry) {
@@ -580,10 +586,15 @@ async function syncRsvpToCloud(entry) {
   if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.includes("/exec")) {
     try {
       const qs = `?name=${encodeURIComponent(entry.name)}&status=${encodeURIComponent(statusUpper)}&t=${Date.now()}`;
-      await fetch(GOOGLE_SHEET_URL + qs, {
-        method: "GET",
-        mode: "no-cors"
-      });
+      await Promise.allSettled([
+        fetch(GOOGLE_SHEET_URL + qs, { method: "GET", mode: "no-cors" }),
+        fetch(GOOGLE_SHEET_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ name: entry.name, status: statusUpper, guestId: entry.id })
+        })
+      ]);
       syncState = statusUpper === "UNDO" ? "" : "✓ Confirmed & updated on the list";
       setTimeout(fetchLiveAttendance, 1200);
     } catch (err) {
@@ -980,6 +991,7 @@ $("#arsvp").onclick = e => {
 
 all();
 fetchLiveAttendance();
+setInterval(fetchLiveAttendance, 15000);
 
 if (!matchMedia("(prefers-reduced-motion:reduce)").matches) {
   document.documentElement.classList.add("js");
